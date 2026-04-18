@@ -6,26 +6,25 @@ from praktikum.ingredient import Ingredient
 from praktikum.database import Database
 
 
-#Создаем объект булочки
 @pytest.fixture
-def bun():
-    name = data.bun_name
-    price = data.bun_price
-    bun = Bun(name, price)
-    return bun
+def bun_data():
+    return {"name": data.bun_name, "price": data.bun_price}
+
 
 @pytest.fixture
 def burger():
     burger = Burger()
     return burger
 
+
 @pytest.fixture
-def ingredient():
-    ingredient_type = data.ingredient_type
-    ingredient_name = data.ingredient_name
-    ingredient_price = data.ingredient_price
-    ingredient = Ingredient(ingredient_type, ingredient_name, ingredient_price)
-    return ingredient
+def ingredient_data():
+    return {
+        "type": data.ingredient_type,
+        "name": data.ingredient_name,
+        "price": data.ingredient_price
+    }
+
 
 @pytest.fixture
 def database():
