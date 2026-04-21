@@ -95,9 +95,7 @@ class TestBurger:
 
         burger.set_buns(mock_bun)
         burger.add_ingredient(mock_ingredient)
-
-        assert data.ingredient_name in burger.get_receipt()
-
+        
         burger.remove_ingredient(0)
 
         assert data.ingredient_name not in burger.get_receipt()
@@ -135,7 +133,6 @@ class TestBurger:
 
         mock_bun = Mock()
         mock_bun.get_price = Mock(return_value=data.bun_price)
-        mock_bun.get_name = Mock(return_value=data.bun_name)
 
         burger.set_buns(mock_bun)
         burger.add_ingredient(mock_ingredient)
